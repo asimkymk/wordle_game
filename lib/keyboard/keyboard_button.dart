@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:wordle_game/core/constants/color_constants.dart';
+import 'package:wordle_game/features/home/model/word_model.dart';
 
 class KeyboardButton extends StatelessWidget {
   final String? text;
@@ -13,7 +15,16 @@ class KeyboardButton extends StatelessWidget {
           color: ColorContants.ICON_COLOR,
           borderRadius: BorderRadius.circular(4)),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          if (text! == "ENTER") {
+            Provider.of<Word>(context, listen: false).saveWord();
+          } else if (text! == "BACKSPACE") {
+            Provider.of<Word>(context, listen: false).deleteChar();
+          } else {
+            Provider.of<Word>(context, listen: false).addChar(text!);
+            //context.watch<Word>().addChar(text!);
+          }
+        },
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: text! == "BACKSPACE"
