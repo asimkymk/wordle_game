@@ -57,6 +57,17 @@ class Word extends ChangeNotifier {
     notifyListeners();
   }
 
+  Future<void> restartGame() async {
+    Random random = new Random();
+    int randomNumber = random.nextInt(5644) + 2;
+    query(randomNumber.toString());
+    guess = ["", "", "", "", "", "", ""];
+    status = [false, false, false, false, false, false];
+    index = 0;
+    completed = false;
+    notifyListeners();
+  }
+
   Future<bool> query_word() async {
     return await dbHelper.queryWord(guess[index]);
   }
