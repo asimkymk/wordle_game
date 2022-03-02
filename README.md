@@ -1,16 +1,24 @@
 # wordle_game
 
-A new Flutter project.
+A Wordle Game project on Flutter.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is like a clone of Wordle Game.
 
-A few resources to get you started if this is your first Flutter project:
+- [Wordle](https://www.nytimes.com/games/wordle/index.html)
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+For now, only playing the game and restarting the game are completed in the project. I might continue to develop the project in the future.
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Devices
+
+Because of using sqflite, for now, supports only Ios, Macos and Android. For more information please check sqflite pub dev page.
+
+- [Sqflite](https://pub.dev/packages/sqflite)
+
+## Screenshots
+
+
+<img src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/1.png?raw=true" alt="" data-canonical-src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/1.png?raw=true" width="300" height="600" />
+
+<img src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/2.png?raw=true" alt="" data-canonical-src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/2.png?raw=true" width="300" height="600" />
