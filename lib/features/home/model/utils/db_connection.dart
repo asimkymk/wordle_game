@@ -1,3 +1,7 @@
+import 'dart:io';
+import 'dart:typed_data';
+
+import 'package:flutter/services.dart';
 import 'package:path/path.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -25,11 +29,42 @@ class DBConnection {
 
   // this opens the database (and creates it if it doesn't exist)
   _initDatabase() async {
-    String path = join(await getDatabasesPath(), _databaseName);
-    return await openDatabase(
-      path,
-      version: _databaseVersion,
-    );
+    var databasesPath = await getDatabasesPath();
+    var path = join(databasesPath, "words.db");
+
+// Check if the database exists
+    var exists = await databaseExists(path);
+
+    if (!exists) {
+      // Should happen only the first time you launch your application
+      print("Creating new copy from asset");
+
+      // Make sure the parent directory exists
+      try {
+        await Directory(dirname(path)).create(recursive: true);
+      } catch (_) {}
+
+      // Copy from asset
+      ByteData data = await rootBundle.load(join("assets", "words.db"));
+      List<int> bytes =
+          data.buffer.asUint8List(data.offsetInBytes, data.lengthInBytes);
+
+      // Write and flush the bytes written
+      await File(path).writeAsBytes(bytes, flush: true);
+    } else {
+      print("Opening existing database");
+    }
+// open the database
+    return await openDatabase(path, readOnly: true);
+  }
+
+  Future _onCreate(Database db, int version) async {
+    await db.execute('''
+          CREATE TABLE $table (
+            $columnId INTEGER PRIMARY KEY AUTOINCREMENT,
+            $columnName TEXT NOT NULL,
+          )
+          ''');
   }
 
   Future<List<Map<String, dynamic>>> queryAllRows() async {
@@ -50,4 +85,6 @@ class DBConnection {
     if (list.length != 0) return true;
     return false;
   }
+
+  getApplicationDocumentsDirectory() {}
 }
