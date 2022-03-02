@@ -31,6 +31,7 @@ class Letter extends StatelessWidget {
             ),
           ),
           decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(16),
               color: context.watch<Word>().status[index!] == false
                   ? ColorContants.BACKGROUND_COLOR
                   : context.watch<Word>().guess[index!][letter_index!] ==
