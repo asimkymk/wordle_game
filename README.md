@@ -19,6 +19,6 @@ Because of using sqflite, for now, supports only Ios, Macos and Android. For mor
 ## Screenshots
 
 
-![SS1](https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/1.png?raw=true)
+![SS1](https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/1.png?raw=true | width=100)
 
-![SS2](https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/2.png?raw=true)
+![SS2](https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/2.png?raw=true | width=100)
