@@ -21,80 +21,83 @@ class HomeView extends HomeViewModel {
         ));
   }
 
-  Column buildHomeBody() {
-    return Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
-      Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Letter(index: 0, letter_index: 0),
-          Letter(index: 0, letter_index: 1),
-          Letter(index: 0, letter_index: 2),
-          Letter(index: 0, letter_index: 3),
-          Letter(index: 0, letter_index: 4),
-        ],
-      ),
-      Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Letter(index: 1, letter_index: 0),
-          Letter(index: 1, letter_index: 1),
-          Letter(index: 1, letter_index: 2),
-          Letter(index: 1, letter_index: 3),
-          Letter(index: 1, letter_index: 4),
-        ],
-      ),
-      Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Letter(index: 2, letter_index: 0),
-          Letter(index: 2, letter_index: 1),
-          Letter(index: 2, letter_index: 2),
-          Letter(index: 2, letter_index: 3),
-          Letter(index: 2, letter_index: 4),
-        ],
-      ),
-      Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Letter(index: 3, letter_index: 0),
-          Letter(index: 3, letter_index: 1),
-          Letter(index: 3, letter_index: 2),
-          Letter(index: 3, letter_index: 3),
-          Letter(index: 3, letter_index: 4),
-        ],
-      ),
-      Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Letter(index: 4, letter_index: 0),
-          Letter(index: 4, letter_index: 1),
-          Letter(index: 4, letter_index: 2),
-          Letter(index: 4, letter_index: 3),
-          Letter(index: 4, letter_index: 4),
-        ],
-      ),
-      Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Letter(index: 5, letter_index: 0),
-          Letter(index: 5, letter_index: 1),
-          Letter(index: 5, letter_index: 2),
-          Letter(index: 5, letter_index: 3),
-          Letter(index: 5, letter_index: 4),
-        ],
-      ),
+  Padding buildHomeBody() {
+    return Padding(
+      padding: const EdgeInsets.only(top: 12.0),
+      child: Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Letter(index: 0, letter_index: 0),
+            Letter(index: 0, letter_index: 1),
+            Letter(index: 0, letter_index: 2),
+            Letter(index: 0, letter_index: 3),
+            Letter(index: 0, letter_index: 4),
+          ],
+        ),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Letter(index: 1, letter_index: 0),
+            Letter(index: 1, letter_index: 1),
+            Letter(index: 1, letter_index: 2),
+            Letter(index: 1, letter_index: 3),
+            Letter(index: 1, letter_index: 4),
+          ],
+        ),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Letter(index: 2, letter_index: 0),
+            Letter(index: 2, letter_index: 1),
+            Letter(index: 2, letter_index: 2),
+            Letter(index: 2, letter_index: 3),
+            Letter(index: 2, letter_index: 4),
+          ],
+        ),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Letter(index: 3, letter_index: 0),
+            Letter(index: 3, letter_index: 1),
+            Letter(index: 3, letter_index: 2),
+            Letter(index: 3, letter_index: 3),
+            Letter(index: 3, letter_index: 4),
+          ],
+        ),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Letter(index: 4, letter_index: 0),
+            Letter(index: 4, letter_index: 1),
+            Letter(index: 4, letter_index: 2),
+            Letter(index: 4, letter_index: 3),
+            Letter(index: 4, letter_index: 4),
+          ],
+        ),
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Letter(index: 5, letter_index: 0),
+            Letter(index: 5, letter_index: 1),
+            Letter(index: 5, letter_index: 2),
+            Letter(index: 5, letter_index: 3),
+            Letter(index: 5, letter_index: 4),
+          ],
+        ),
 
-      //KEYBOARD
-      Spacer(),
-      KeyboardWidget(),
-      Spacer(),
-    ]);
+        //KEYBOARD
+        Spacer(),
+        KeyboardWidget(),
+        Spacer(),
+      ]),
+    );
   }
 
   AppBar buildAppBar() {
@@ -118,13 +121,6 @@ class HomeView extends HomeViewModel {
               Provider.of<Word>(context, listen: false).restartGame();
             },
             icon: Icon(Icons.restart_alt, color: ColorContants.ICON_COLOR)),
-        IconButton(
-            onPressed: () {},
-            icon:
-                Icon(Icons.ios_share_rounded, color: ColorContants.ICON_COLOR)),
-        IconButton(
-            onPressed: () {},
-            icon: Icon(Icons.settings, color: ColorContants.ICON_COLOR))
       ],
     );
   }

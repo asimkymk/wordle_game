@@ -32,29 +32,57 @@ class Letter extends StatelessWidget {
           ),
           decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(16),
-              color: context.watch<Word>().status[index!] == false
-                  ? ColorContants.BACKGROUND_COLOR
-                  : context.watch<Word>().guess[index!][letter_index!] ==
-                          context.watch<Word>().correctWord[letter_index!]
-                      ? ColorContants.CORRECT_PLACE_COLOR
-                      : context.watch<Word>().correctWord.contains(context
-                              .watch<Word>()
-                              .guess[index!][letter_index!])
-                          ? ColorContants.WRONG_PLACE_COLOR
-                          : ColorContants.FALSE_PLACE_COLOR,
+              color: buildBackgroundColor(context),
               border: Border.all(
                 width: 3,
-                color: context.watch<Word>().status[index!] == false
-                    ? ColorContants.FALSE_PLACE_COLOR
-                    : context.watch<Word>().guess[index!][letter_index!] ==
-                            context.watch<Word>().correctWord[letter_index!]
-                        ? ColorContants.CORRECT_PLACE_COLOR
-                        : context.watch<Word>().correctWord.contains(context
-                                .watch<Word>()
-                                .guess[index!][letter_index!])
-                            ? ColorContants.WRONG_PLACE_COLOR
-                            : ColorContants.FALSE_PLACE_COLOR,
+                color: buildBorderColor(context),
               ))),
     );
+  }
+
+  Color buildBorderColor(BuildContext context) {
+    return context.watch<Word>().status[index!] == false
+        ? ColorContants.FALSE_PLACE_COLOR
+        : context.watch<Word>().guess[index!][letter_index!] ==
+                context.watch<Word>().correctWord[letter_index!]
+            ? ColorContants.CORRECT_PLACE_COLOR
+            : context.watch<Word>().correctWord.contains(
+                    context.watch<Word>().guess[index!][letter_index!])
+                ? context.watch<Word>().correctWord[context
+                            .watch<Word>()
+                            .correctWord
+                            .indexOf(context.watch<Word>().guess[index!]
+                                [letter_index!])] ==
+                        context.watch<Word>().guess[index!][context
+                            .watch<Word>()
+                            .correctWord
+                            .indexOf(context.watch<Word>().guess[index!]
+                                [letter_index!])]
+                    ? ColorContants.FALSE_PLACE_COLOR
+                    : ColorContants.WRONG_PLACE_COLOR
+                : ColorContants.FALSE_PLACE_COLOR;
+  }
+
+  Color buildBackgroundColor(BuildContext context) {
+    return context.watch<Word>().status[index!] == false
+        ? ColorContants.BACKGROUND_COLOR
+        : context.watch<Word>().guess[index!][letter_index!] ==
+                context.watch<Word>().correctWord[letter_index!]
+            ? ColorContants.CORRECT_PLACE_COLOR
+            : context.watch<Word>().correctWord.contains(
+                    context.watch<Word>().guess[index!][letter_index!])
+                ? context.watch<Word>().correctWord[context
+                            .watch<Word>()
+                            .correctWord
+                            .indexOf(context.watch<Word>().guess[index!]
+                                [letter_index!])] ==
+                        context.watch<Word>().guess[index!][context
+                            .watch<Word>()
+                            .correctWord
+                            .indexOf(context.watch<Word>().guess[index!]
+                                [letter_index!])]
+                    ? ColorContants.FALSE_PLACE_COLOR
+                    : ColorContants.WRONG_PLACE_COLOR
+                : ColorContants.FALSE_PLACE_COLOR;
   }
 }
