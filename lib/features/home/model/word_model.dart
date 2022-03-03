@@ -44,17 +44,29 @@ class Word extends ChangeNotifier {
         : guess[index][letter_index];
   }
 
-  saveWord() async {
+  Future<int> saveWord() async {
     if (guess[index].length == 5) {
       if (await query_word() == true) {
         status[index] = true;
         if (guess[index] == correctWord) {
           completed = true;
+          notifyListeners();
+          return 1; //kelime doğru bilindi
         }
         index++;
+
+        if (index == 6) {
+          notifyListeners();
+          return 3; // game over
+        }
+        notifyListeners();
+        return 0; //kelime doğru değil
       }
+      notifyListeners();
+      return 2; //kelime listesinde kelime yok
     }
     notifyListeners();
+    return -1; //kelime uzunluğu 5 değil.
   }
 
   Future<void> restartGame() async {
