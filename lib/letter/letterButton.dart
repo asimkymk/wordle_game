@@ -18,7 +18,7 @@ class Letter extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: AnimatedContainer(
-          duration: Duration(milliseconds: 450),
+          duration: Duration(seconds: 1),
           curve: Curves.fastOutSlowIn,
           width: 64,
           height: 64,
