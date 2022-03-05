@@ -19,10 +19,10 @@ Because of using sqflite, for now, supports only Ios, Macos and Android. For mor
 ## Screenshots
 
 
-<img src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/1.png?raw=true" alt="" data-canonical-src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/1.png?raw=true" width="300" height="600" />
+<img src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/ss1.png?raw=true" alt="" data-canonical-src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/ss1.png?raw=true" width="300" height="700" />
 
-<img src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/2.png?raw=true" alt="" data-canonical-src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/2.png?raw=true" width="300" height="600" />
+<img src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/ss2.png?raw=true" alt="" data-canonical-src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/ss2.png?raw=true" width="300" height="700" />
 
-<img src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/3.png?raw=true" alt="" data-canonical-src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/3.png?raw=true" width="300" height="600" />
+<img src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/3.png?raw=true" alt="" data-canonical-src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/3.png?raw=true"  width="300" height="700" />
 
-<img src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/4.png?raw=true" alt="" data-canonical-src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/4.png?raw=true" width="300" height="600" />
+<img src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/4.png?raw=true" alt="" data-canonical-src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/4.png?raw=true"  width="300" height="700" />
