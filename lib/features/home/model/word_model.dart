@@ -64,7 +64,7 @@ class Word extends ChangeNotifier {
   }
 
   void deleteChar() {
-    if (guess[index].length > 0) {
+    if (guess[index].length > 0 && completed == false) {
       guess[index] = guess[index].substring(0, guess[index].length - 1);
     }
     notifyListeners();
@@ -102,7 +102,9 @@ class Word extends ChangeNotifier {
 
         if (index + 1 == 6) {
           _letterController();
+          completed = true;
           notifyListeners();
+
           return 3; // game over
         }
         _letterController();
