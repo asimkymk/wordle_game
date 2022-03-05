@@ -12,7 +12,15 @@ class KeyboardButton extends StatelessWidget {
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 2),
       decoration: BoxDecoration(
-          color: ColorContants.ICON_COLOR,
+          color: text! == "ENTER" || text! == "BACKSPACE"
+              ? ColorContants.ICON_COLOR
+              : context.watch<Word>().letters[text!] == 0
+                  ? ColorContants.ICON_COLOR
+                  : context.watch<Word>().letters[text!] == 1
+                      ? ColorContants.FALSE_PLACE_COLOR
+                      : context.watch<Word>().letters[text!] == 2
+                          ? ColorContants.WRONG_PLACE_COLOR
+                          : ColorContants.CORRECT_PLACE_COLOR,
           borderRadius: BorderRadius.circular(4)),
       child: InkWell(
         onTap: () async {
