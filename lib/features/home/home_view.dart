@@ -4,6 +4,7 @@ import 'package:wordle_game/keyboard/keyboard_widget.dart';
 import 'package:wordle_game/letter/letterButton.dart';
 
 import '../../core/constants/color_constants.dart';
+import '../nav/nav_drawer.dart';
 import 'home_view_model.dart';
 import 'model/word_model.dart';
 
@@ -13,6 +14,7 @@ class HomeView extends HomeViewModel {
     return MaterialApp(
         title: 'Wordle TR',
         home: Scaffold(
+          drawer: NavDrawer(),
           backgroundColor: ColorContants.BACKGROUND_COLOR,
           appBar: buildAppBar(),
           body: Center(
@@ -103,9 +105,6 @@ class HomeView extends HomeViewModel {
   AppBar buildAppBar() {
     return AppBar(
       backgroundColor: ColorContants.BACKGROUND_COLOR,
-      leading: IconButton(
-          onPressed: () {},
-          icon: Icon(Icons.help_outline, color: ColorContants.ICON_COLOR)),
       title: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -120,7 +119,7 @@ class HomeView extends HomeViewModel {
             onPressed: () {
               Provider.of<Word>(context, listen: false).restartGame();
             },
-            icon: Icon(Icons.restart_alt, color: ColorContants.ICON_COLOR)),
+            icon: Icon(Icons.restart_alt, color: Colors.white)),
       ],
     );
   }

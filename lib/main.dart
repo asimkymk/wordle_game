@@ -2,8 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:wordle_game/features/home/model/word_model.dart';
 import 'features/home/home.dart';
-//TODO WORD GUESS LETTER COLOR BUG
 
+/*TODO LIST
+
+ - New Home Screen for playing word anf number guess play
+ - Number guess play screen
+ --- Online vs with friend
+
+
+*/
 void main() => runApp(
       MultiProvider(
         providers: [
