@@ -26,3 +26,9 @@ Because of using sqflite, for now, supports only Ios, Macos and Android. For mor
 <img src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/3.png?raw=true" alt="" data-canonical-src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/3.png?raw=true"  width="300" height="700" />
 
 <img src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/4.png?raw=true" alt="" data-canonical-src="https://raw.githubusercontent.com/asimkymk/wordle_game/main/screenshots/4.png?raw=true"  width="300" height="700" />
+
+### Todo
+
+- [ ] Online vs with friend searchs
+- [ ] Number guess play screen
+  - [ ] New Home Screen for playing word and number guess play 
